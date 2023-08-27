@@ -6,7 +6,7 @@
 
 
 # Set the new image value
-new_image_value="ghcr.io/milanmdev/bsky.rss:queue-002738b"
+new_image_value="ghcr.io/milanmdev/bsky.rss:queue-0a51205"
 
 # Find docker-compose.yml files and loop through them
 find . -type f -name 'docker-compose.yml' | while read -r file; do
