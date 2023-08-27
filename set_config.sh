@@ -10,13 +10,15 @@
 # Default master config.json as a string
 master_config=$(cat <<EOM
 {
-  "string": "\$title",
+  "string": "$title",
   "publishEmbed": true,
   "languages": ["en"],
   "truncate": true,
   "runInterval": 60,
   "dateField": "",
   "imageField": "",
+  "forceDescriptionEmbed": true,
+  "descriptionClearHTML": true,
   "ogUserAgent": ""
 }
 EOM

@@ -6,6 +6,8 @@
 # it Update config.json without overwriting existing fields
 
 
+#!/bin/bash
+
 # Loop through all subfolders
 for dir in */; do
   # Extract parent folder name
@@ -20,6 +22,6 @@ for dir in */; do
   # Check if config.json exists
   if [[ -f $config_path ]]; then
     # Update only missing fields and languages
-    jq --arg lang "$lang" '.string = (.string // "$title") | .publishEmbed = (.publishEmbed // true) | .languages = (.languages // [$lang]) | .truncate = (.truncate // true) | .runInterval = (.runInterval // 60) | .dateField = (.dateField // "") | .imageField = (.imageField // "") | .ogUserAgent = (.ogUserAgent // "")' $config_path > temp.json && mv temp.json $config_path
+    jq --arg lang "$lang" '.string = (.string // "$title ") | .publishEmbed = (.publishEmbed // true) | .languages = (.languages // [$lang]) | .truncate = (.truncate // true) | .runInterval = (.runInterval // 60) | .dateField = (.dateField // "") | .imageField = (.imageField // "") | .forceDescriptionEmbed = (.forceDescriptionEmbed // true) | .descriptionClearHTML = (.descriptionClearHTML // true) | .ogUserAgent = (.ogUserAgent // "")' $config_path > temp.json && mv temp.json $config_path
   fi
 done
