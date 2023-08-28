@@ -5,7 +5,10 @@
 #
 # set config.json with default or missing values
 # carefull this overwrite existing config.json values
-
+# warning: the Languages value is set/defined by the manner your folder name is named
+# so for example, yourbot-en and yourbot-fr will set config.json to use EN and FR languages string. 
+# if your folder are not following this naming convention, your language string will defautl to "En"
+# feel free to change the master config below if some of the fields are not needed for your usecase.
 
 # Default master config.json as a string
 master_config=$(cat <<EOM
